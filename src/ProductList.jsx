@@ -18,14 +18,14 @@ function ProductList() {
           image:
             "https://cdn.pixabay.com/photo/2021/01/22/06/04/snake-plant-5939187_1280.jpg",
           description: "Produces oxygen at night, improving air quality.",
-          cost: "$15",
+          cost: "15",
         },
         {
           name: "Spider Plant",
           image:
             "https://cdn.pixabay.com/photo/2018/07/11/06/47/chlorophytum-3530413_1280.jpg",
           description: "Filters formaldehyde and xylene from the air.",
-          cost: "$12",
+          cost: "12",
         },
         {
           name: "Peace Lily",
