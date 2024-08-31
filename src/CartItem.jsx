@@ -8,18 +8,47 @@ const CartItem = ({ onContinueShopping }) => {
   const dispatch = useDispatch();
 
   // Calculate total amount for all products in the cart
-  const calculateTotalAmount = () => {};
+  // To calculate the total amount for all items in the cart, I had to iterate through the cart array,
+  //  multiplying the cost of each item by its quantity and summing these values.
 
-  const handleContinueShopping = (e) => {};
+  const calculateTotalAmount = () => {
+    return cart
+      .reduce(
+        (total, item) => total + parseFloat(item.cost.slice(1)) * item.quantity,
+        0 // This function uses the reduce method to accumulate the total cost of all items in the cart.
+        // parseFloat(item.cost.slice(1)) removes the dollar sign and converts the string cost to a float.
+      )
+      .toFixed(2); // Adding .toFixed(2) to ensure two decimal points in the total
+  };
 
-  const handleIncrement = (item) => {};
+  //The handleContinueShopping function is used to trigger any desired behavior when the user clicks the "Continue Shopping" button. This could involve navigating back to the product listing page, for example.
+  const handleContinueShopping = (e) => {
+    e.preventDefault(); // This method prevents the default button behavior and calls the onContinueShopping callback passed from the parent component.
+    onContinueShopping();
+  };
 
-  const handleDecrement = (item) => {};
+  const handleIncrement = (item) => {
+    dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }));
+  };
 
-  const handleRemove = (item) => {};
+  const handleDecrement = (item) => {
+    if (item.quantity > 1) {
+      dispatch(updateQuantity({ name: item.name, quantity: item.quantity -1 }));
+    } else {
+      handleRemove(item);
+    }
+  };
+
+  const handleRemove = (item) => {
+    dispatch(removeItem(item.name))
+  };
 
   // Calculate total cost based on quantity for an item
-  const calculateTotalCost = (item) => {};
+  // This function calculates the cost for a single item and multiplies it by the quantity,
+  // then formats it to two decimal points.
+  const calculateTotalCost = (item) => {
+    return (parseFloat(item.cost.slice(1)) * item.quantity).toFixed(2);
+  };
 
   return (
     <div className="cart-container">
