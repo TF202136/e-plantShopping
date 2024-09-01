@@ -18,7 +18,7 @@ const CartItem = ({ onContinueShopping }) => {
         0 // This function uses the reduce method to accumulate the total cost of all items in the cart.
         // parseFloat(item.cost.slice(1)) removes the dollar sign and converts the string cost to a float.
       )
-      .toFixed(2); // Adding .toFixed(2) to ensure two decimal points in the total
+      
   };
 
   //The handleContinueShopping function is used to trigger any desired behavior when the user clicks the "Continue Shopping" button. This could involve navigating back to the product listing page, for example.
@@ -47,7 +47,7 @@ const CartItem = ({ onContinueShopping }) => {
   // This function calculates the cost for a single item and multiplies it by the quantity,
   // then formats it to two decimal points.
   const calculateTotalCost = (item) => {
-    return (item.cost * item.quantity).toFixed(2);
+    return item.cost * item.quantity;
   };
 
   return (
