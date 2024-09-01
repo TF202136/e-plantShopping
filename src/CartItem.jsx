@@ -14,7 +14,7 @@ const CartItem = ({ onContinueShopping }) => {
   const calculateTotalAmount = () => {
     return cart
       .reduce(
-        (total, item) => total + parseFloat(item.cost.slice(1)) * item.quantity,
+        (total, item) => total + item.cost * item.quantity,
         0 // This function uses the reduce method to accumulate the total cost of all items in the cart.
         // parseFloat(item.cost.slice(1)) removes the dollar sign and converts the string cost to a float.
       )
@@ -47,7 +47,7 @@ const CartItem = ({ onContinueShopping }) => {
   // This function calculates the cost for a single item and multiplies it by the quantity,
   // then formats it to two decimal points.
   const calculateTotalCost = (item) => {
-    return (parseFloat(item.cost.slice(1)) * item.quantity).toFixed(2);
+    return item.cost * item.quantity;
   };
 
   return (
