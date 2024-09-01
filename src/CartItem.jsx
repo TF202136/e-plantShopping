@@ -47,7 +47,7 @@ const CartItem = ({ onContinueShopping }) => {
   // This function calculates the cost for a single item and multiplies it by the quantity,
   // then formats it to two decimal points.
   const calculateTotalCost = (item) => {
-    return item.cost * item.quantity;
+    return (item.cost * item.quantity).toFixed(2);
   };
 
   return (
