@@ -364,7 +364,7 @@ function ProductList() {
                     <div className="product-price">{plant.cost}</div>
                     <button
                       className="product-button"
-                      onClick={() => handleAddToCart(plant)}
+                      onClick={() => handleAddToCart(product)}
                     >
                       Add to Cart
                     </button>
