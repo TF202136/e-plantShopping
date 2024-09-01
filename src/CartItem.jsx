@@ -14,7 +14,6 @@ const CartItem = ({ onContinueShopping }) => {
 
   const handleContinueShopping = (e) => {
     e.preventDefault();
-    alert("Functionality to be added for future reference");
     if (onContinueShopping) onContinueShopping();
   };
 
