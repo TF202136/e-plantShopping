@@ -281,11 +281,11 @@ function ProductList() {
     setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
     setShowCart(false); // Hide the cart when navigating to About Us
   };
-  const handleAddToCart = (plant) => {
-    dispatch(addItem(plant));
+  const handleAddToCart = (product) => {
+    dispatch(addItem(product));
     setaddedToCart((prevState) => ({
       ...prevState,
-      [plant.name]: true,
+      [product.name]: true,
     }));
   };
   const handleContinueShopping = (e) => {
@@ -367,7 +367,7 @@ function ProductList() {
                     <div className="product-price">{plant.cost}</div>
                     <button
                       className="product-button"
-                      onClick={() => handleAddToCart(plant.name)}
+                      onClick={() => handleAddToCart(product)}
                     >
                       Add to Cart
                     </button>
