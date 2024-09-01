@@ -286,6 +286,7 @@ function ProductList() {
     setShowCart(false);
   };
   const [addedToCart, setAddedToCart] = useState({});
+  console.log("Adding to cart:", product);
   const handleAddToCart = (product) => {
     dispatch(addItem(product));
     setAddedToCart((prevState) => ({
@@ -368,7 +369,9 @@ function ProductList() {
                       onClick={() => handleAddToCart(plant)}
                       disabled={addedToCart[plant.name] || false}
                     >
-                      {addedToCart[plant.name] ? 'Added to Cart' : 'Add to Cart'}
+                      {addedToCart[plant.name]
+                        ? "Added to Cart"
+                        : "Add to Cart"}
                     </button>
                   </div>
                 ))}
