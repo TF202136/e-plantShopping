@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./ProductList.css";
 import CartItem from "./CartItem";
 import { useDispatch } from "react-redux";
-import { addItem } from "./CartSlice"
+import { addItem } from "./CartSlice";
 
 function ProductList() {
   const [showCart, setShowCart] = useState(false);
@@ -365,6 +365,7 @@ function ProductList() {
                       {plant.description}
                     </div>
                     <div className="product-price">{plant.cost}</div>
+
                     <button
                       className="product-button"
                       onClick={() => handleAddToCart(plant)}
