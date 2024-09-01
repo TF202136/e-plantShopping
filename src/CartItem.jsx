@@ -19,7 +19,10 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleDecrement = (item) => {
-    if (item && item.quantity > 0) dispatch(updateQuantity(item));
+    if (item && item.quantity > 1) {
+      const updatedItem = { ...item, quantity: item.quantity - 1 };
+      dispatch(updateQuantity(item));
+    }
   };
 
   const handleRemove = (item) => {
@@ -34,7 +37,7 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   return (
-    <div className="cart-container" {...onContinueShopping}>
+    <div className="cart-container">
       <h2 style={{ color: "black" }}>
         Total Cart Amount: ${calculateTotalAmount()}
       </h2>
