@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./ProductList.css";
 import CartItem from "./CartItem";
+import { useDispatch } from "react-redux";
 import { addItem } from "./CartSlice";
 
 function ProductList() {
   const [showCart, setShowCart] = useState(false);
   const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
   const { addedToCart, setaddedToCart } = useState({}); // State
+  const dispatch = useDispatch();
+
   const plantsArray = [
     {
       category: "Air Purifying Plants",
@@ -278,11 +281,11 @@ function ProductList() {
     setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
     setShowCart(false); // Hide the cart when navigating to About Us
   };
-  const handleAddToCart = (product) => {
-    dispatchEvent(addItem(product));
+  const handleAddToCart = (plant) => {
+    dispatch(addItem(plant));
     setaddedToCart((prevState) => ({
       ...prevState,
-      [product.name]: true,
+      [plant.name]: true,
     }));
   };
   const handleContinueShopping = (e) => {
@@ -364,7 +367,7 @@ function ProductList() {
                     <div className="product-price">{plant.cost}</div>
                     <button
                       className="product-button"
-                      onClick={() => handleAddToCart(product.name)}
+                      onClick={() => handleAddToCart(plant.name)}
                     >
                       Add to Cart
                     </button>
