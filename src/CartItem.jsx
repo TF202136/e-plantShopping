@@ -17,7 +17,12 @@ const CartItem = ({ onContinueShopping }) => {
 
   const handleContinueShopping = (e) => {
     if (e) e.preventDefault();
-    if (onContinueShopping) onContinueShopping();
+    console.log("Continue Shopping button clicked"); // Debugging
+    if (onContinueShopping) {
+      onContinueShopping();
+    } else {
+      console.error("onContinueShopping prop is not defined");
+    }
   };
 
   const handleIncrement = (item) => {
