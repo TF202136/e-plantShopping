@@ -288,9 +288,7 @@ function ProductList() {
       [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
     }));
   };
-  const handleContinueShopping = (e) => {
-    // e.preventDefault();
-    window.location.href = "./CartItem";
+  const handleContinueShopping = () => {
     setShowCart(false);
   };
   return (
