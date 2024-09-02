@@ -349,6 +349,8 @@ function ProductList() {
                     id="mainIconPathAttribute"
                   ></path>
                 </svg>
+                <span>{calculateTotalQuantity()}</span>{" "}
+                {/* Display total quantity */}
               </h1>
             </a>
           </div>
@@ -378,8 +380,9 @@ function ProductList() {
                     <button
                       className="product-button"
                       onClick={() => handleAddToCart(plant)}
+                      disabled={addedToCart[plant.name]}
                     >
-                      Add to Cart
+                      {addedToCart[plant.name] ? "Added to Cart" : "Add to Cart"}
                     </button>
                   </div>
                 ))}
