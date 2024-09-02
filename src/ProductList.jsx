@@ -289,7 +289,8 @@ function ProductList() {
     }));
   };
   const handleContinueShopping = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+    window.location.href = "./CartItem";
     setShowCart(false);
   };
   return (
