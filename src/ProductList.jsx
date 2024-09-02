@@ -290,7 +290,7 @@ function ProductList() {
   };
   const handleContinueShopping = (e) => {
     // e.preventDefault();
-    window.location.href = "./CartItem";
+    window.location.href = "/CartItem";
     setShowCart(false);
   };
   return (
