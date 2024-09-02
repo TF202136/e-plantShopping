@@ -288,10 +288,11 @@ function ProductList() {
       [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
     }));
   };
-  const handleContinueShopping = () => {
+  const handleContinueShopping = (e) => {
+    e.preventDefault();
     setShowCart(false);
-    console.log("Continue shopping clicked");
   };
+
   return (
     <div>
       <div className="navbar" style={styleObj}>
@@ -379,7 +380,7 @@ function ProductList() {
           ))}
         </div>
       ) : (
-        <CartItem onContinueShopping={handleContinueShopping} />
+        <CartItem onContinueShopping={handleContinueShopping}/>
       )}
     </div>
   );
