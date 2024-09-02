@@ -273,10 +273,11 @@ function ProductList() {
     textDecoration: "none",
   };
 
-
-
   const handleCartClick = (e) => {
-   
+    let isPresent;
+    cart.forEach((product) => {
+      if (item.name === product.name) isPresent = true;
+    });
     e.preventDefault();
     setShowCart(true); // Set showCart to true when cart icon is clicked
   };
@@ -286,7 +287,6 @@ function ProductList() {
     setShowCart(false); // Hide the cart when navigating to About Us
   };
   const handleAddToCart = (product) => {
-  
     dispatch(addItem(product));
     setAddedToCart((prevState) => ({
       ...prevState,
@@ -386,7 +386,7 @@ function ProductList() {
           ))}
         </div>
       ) : (
-        <CartItem onContinueShopping={handleContinueShopping}/>
+        <CartItem onContinueShopping={handleContinueShopping} />
       )}
     </div>
   );
