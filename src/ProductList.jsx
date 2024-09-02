@@ -276,12 +276,7 @@ function ProductList() {
 
 
   const handleCartClick = (e) => {
-    const [ cartQuantity, setCartQuantity] = useState(0);
-    const carts = useSelector(store => store.cart.items);
-    useEffect (() => {
-      let total = 0
-      carts.forEach(item => total += item.quantity)
-    }, [carts])
+   
     e.preventDefault();
     setShowCart(true); // Set showCart to true when cart icon is clicked
   };
