@@ -342,6 +342,9 @@ function ProductList() {
                     id="mainIconPathAttribute"
                   ></path>
                 </svg>
+                <span style={{ color: "white", fontSize: "25px" }}>
+                  {totalCartItems > 0 ? `(${totalCartItems})` : ""}
+                </span>
               </h1>
             </a>
           </div>
