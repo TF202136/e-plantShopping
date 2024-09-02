@@ -275,7 +275,7 @@ function ProductList() {
 
   const handleCartClick = (e) => {
     let isPresent;
-    cart.forEach((product) => {
+    plantsArray.forEach((product) => {
       if (item.name === product.name) isPresent = true;
     });
     e.preventDefault();
