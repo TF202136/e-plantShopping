@@ -16,13 +16,13 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleContinueShopping = (e) => {
-    // Only call preventDefault if e is defined
-    if (e && e.preventDefault) {
-      e.preventDefault();
+    console.log("Event object:", e); // Log the event object to see what is passed
+    if (e) {
+      e.preventDefault(); // Call preventDefault if the event is defined
     }
-    console.log("Continue Shopping button clicked");
+
     if (onContinueShopping) {
-      onContinueShopping();
+      onContinueShopping(); // Call the prop function if it exists
     } else {
       console.error("onContinueShopping prop is not defined");
     }
