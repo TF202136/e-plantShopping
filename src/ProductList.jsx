@@ -272,7 +272,16 @@ function ProductList() {
     fontSize: "30px",
     textDecoration: "none",
   };
+
+
+
   const handleCartClick = (e) => {
+    const [ cartQuantity, setCartQuantity] = useState(0);
+    const carts = useSelector(store => store.cart.items);
+    useEffect (() => {
+      let total = 0
+      carts.forEach(item => total += item.quantity)
+    }, [carts])
     e.preventDefault();
     setShowCart(true); // Set showCart to true when cart icon is clicked
   };
@@ -373,7 +382,7 @@ function ProductList() {
                       onClick={() => handleAddToCart(plant)}
                       disabled={addedToCart[plant.name]}
                     >
-                      {addedToCart[plant.name]} Add to Cart
+                      {addedToCart[plant.name] ? "Added" : "Add to Cart"}
                     </button>
                   </div>
                 ))}
