@@ -290,6 +290,7 @@ function ProductList() {
   };
   const handleContinueShopping = () => {
     setShowCart(false);
+    console.log("Continue shopping clicked");
   };
   return (
     <div>

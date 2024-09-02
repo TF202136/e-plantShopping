@@ -17,6 +17,7 @@ const CartItem = ({ onContinueShopping }) => {
 
   const handleContinueShopping = () => {
     if (onContinueShopping) onContinueShopping();
+    console.log("Continue shopping clicked");
   };
 
   const handleIncrement = (item) => {
