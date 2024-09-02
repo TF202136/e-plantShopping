@@ -16,8 +16,11 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleContinueShopping = (e) => {
-    if (e) e.preventDefault();
-    console.log("Continue Shopping button clicked"); // Debugging
+    // Only call preventDefault if e is defined
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
+    console.log("Continue Shopping button clicked");
     if (onContinueShopping) {
       onContinueShopping();
     } else {
