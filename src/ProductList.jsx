@@ -282,6 +282,7 @@ function ProductList() {
     setShowCart(false); // Hide the cart when navigating to About Us
   };
   const handleAddToCart = (product) => {
+  
     dispatch(addItem(product));
     setAddedToCart((prevState) => ({
       ...prevState,
@@ -370,6 +371,7 @@ function ProductList() {
                     <button
                       className="product-button"
                       onClick={() => handleAddToCart(plant)}
+                      disabled={addedToCart[plant.name]}
                     >
                       Add to Cart
                     </button>
