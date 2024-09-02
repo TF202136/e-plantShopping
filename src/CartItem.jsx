@@ -43,6 +43,7 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleRemove = (item) => {
+    console.log("Removing item:", item); // Log the item being removed
     dispatch(removeItem(item));
   };
 
