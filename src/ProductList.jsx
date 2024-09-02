@@ -274,10 +274,6 @@ function ProductList() {
   };
 
   const handleCartClick = (e) => {
-    let isPresent;
-    plantsArray.forEach((product) => {
-      if (item.name === product.name) isPresent = true;
-    });
     e.preventDefault();
     setShowCart(true); // Set showCart to true when cart icon is clicked
   };
